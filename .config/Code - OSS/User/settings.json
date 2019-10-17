@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Default Light+",
+    "editor.fontFamily": "'DejaVu Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.minimap.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.fontSize": 15,
+    "git.enableSmartCommit": true,
+    "explorer.confirmDelete": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "workbench.startupEditor": "newUntitledFile"
+}

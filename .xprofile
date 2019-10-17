@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# set the keyboard layout
+setxkbmap usfr
+#xkbcomp ~/.config/xkb/usfr.xkb $DISPLAY
+
+# set the wallpaper
+feh --recursive --randomize --bg-fill ~/.wallpaper/*
+
+# start the screensaver
+xscreensaver -no-splash &
+
+# start compton
+compton -b &

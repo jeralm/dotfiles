@@ -1,0 +1,25 @@
+default partial alphanumeric_keys
+xkb_symbols "usfr" {
+
+    include "us(basic)"
+    name[Group1]= "English-US with french diacritics on AltGr";
+
+    key <AD03> { [ e,      E,       eacute,         Eacute ] };
+    key <AC03> { [ d,      D,       egrave,         Egrave ] };
+    key <AD02> { [ w,      W,       ecircumflex,    Ecircumflex ] };
+    key <AD04> { [ r,      R,       ediaeresis,     Ediaeresis ] };
+    key <AD06> { [ y,      Y,       ydiaeresis,     Ydiaeresis ] };
+    key <AD07> { [ u,      U,       ugrave,         Ugrave ] };
+    key <AC06> { [ h,      H,       udiaeresis,     Udiaeresis ] };
+    key <AC07> { [ j,      J,       ucircumflex,    Ucircumflex ] };
+    key <AD08> { [ i,      I,       icircumflex,    Icircumflex ] };
+    key <AC08> { [ k,      K,       idiaeresis,     Idiaeresis ] };
+    key <AD09> { [ o,      O,       ocircumflex,    Ocircumflex ] };
+    key <AC01> { [ a,      A,       agrave,         Agrave ] };
+    key <AB01> { [ z,      Z,       acircumflex,    Acircumflex ] };
+    key <AB03> { [ c,      C,       ccedilla,       Ccedilla ] };
+    key <AB08> { [ comma,  less,    guillemotleft,  guillemotleft ] };
+    key <AB09> { [ period, greater, guillemotright, guillemotright ] };
+
+    include "level3(ralt_switch)"
+};

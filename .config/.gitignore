@@ -1,0 +1,27 @@
+#/Code - OSS/
+/Electron/
+/GIMP/
+/Pinta/
+/autorandr/
+/cef_user_data/
+/chromium/
+/configstore/
+/dconf/
+/discord/
+/enchant/
+/gtk-2.0/
+/gtk-3.0/
+/htop/
+#/i3/
+/mono.addins/
+/mpv/
+#/ranger/
+/spotify/
+/transmission/
+#/xkb/
+/yay/
+#/.gitignore
+/QtProject.conf
+/baloofilerc
+#/compton.conf
+#/mimeapps.list

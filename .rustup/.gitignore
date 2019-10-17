@@ -1,0 +1,6 @@
+/downloads/
+/tmp/
+/toolchains/
+/update-hashes/
+#/.gitignore
+#/settings.toml

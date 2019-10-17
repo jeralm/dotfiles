@@ -1,0 +1,68 @@
+!! Colors
+
+#define BLACK       #222222
+#define BLACK_B     #666666
+#define RED         #a62121
+#define RED_B       #e63232
+#define GREEN       #208c39
+#define GREEN_B     #27b348
+#define YELLOW      #a68521
+#define YELLOW_B    #cca329
+#define BLUE        #20568c
+#define BLUE_B      #2879c9
+#define MAGENTA     #9e3f9e
+#define MAGENTA_B   #d04ec5
+#define CYAN        #3a9e9e
+#define CYAN_B      #68cbce
+#define WHITE       #aaaaaa
+#define WHITE_B     #ffffff
+
+*.color0:       BLACK    
+*.color8:       BLACK_B  
+*.color1:       RED      
+*.color9:       RED_B    
+*.color2:       GREEN    
+*.color10:      GREEN_B  
+*.color3:       YELLOW   
+*.color11:      YELLOW_B 
+*.color4:       BLUE     
+*.color12:      BLUE_B   
+*.color5:       MAGENTA  
+*.color13:      MAGENTA_B
+*.color6:       CYAN     
+*.color14:      CYAN_B   
+*.color7:       WHITE    
+*.color15:      WHITE_B  
+
+*.foreground:   BLACK
+*.background:   WHITE_B
+*.cursorColor:  BLACK
+
+!! URxvt
+
+! Misc
+!URxvt*background: [50]WHITE_B
+URxvt*internalBorder: 8
+URxvt*depth: 32
+!URxvt*fading: 70
+
+! Behaviour
+URxvt*urgentOnBell: true
+URxvt*saveline: 2048
+URxvt*iso14755: false
+!URxvt*fadeColor: WHITE_B
+
+! Font
+URxvt*font: xft:DejaVu Sans Mono:style=Book:size=12
+URxvt*boldFont: xft:DejaVu Sans Mono:style=Bold:size=12
+URxvt*italicFont: xft:DejaVu Sans Mono:style=Oblique:size=12
+URxvt*boldItalicfont: xft:DejaVu Sans Mono:style=Bold Oblique:size=12
+URxvt*letterSpace: 0
+URxvt*lineSpace: 0
+
+! Cursor
+URxvt*cursorBlink: true
+URxvt*cursorUnderline: false
+
+! ScrollBar
+URxvt*scrollBar: false

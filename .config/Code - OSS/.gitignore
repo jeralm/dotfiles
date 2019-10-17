@@ -1,0 +1,17 @@
+/Backups/
+/Cache/
+/CachedData/
+/CachedExtensions/
+/GPUCache/
+#/User/
+/Workspaces/
+/blob_storage/
+/logs/
+#/.gitignore
+/Cookies
+/Cookies-journal
+/Network Persistent State
+/languagepacks.json
+/machineid
+/rapid_render.json
+/storage.json

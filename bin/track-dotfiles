@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# first argument must be the directory path, without trailing slash
+track_dir () {
+
+    dir_content="track_dir_dir_content"
+    commented_lines="track_dir_commented_line"
+
+    # ensure a .gitignore exists
+    touch "$1/.gitignore"
+
+    # list content of directory
+    env LC_COLLATE="C" ls -A1 --group-directories-first "$1" | sed "/^$dir_content$/d" > "$1/$dir_content"
+
+    # save a list of the files that should be commented
+    cat "$1/.gitignore" | grep "^#" | sed 's/^#\///g' | sed 's/\/$//g' > "$1/$commented_lines"
+
+    # always comment .gitignore
+    echo ".gitignore" >> "$1/$commented_lines"
+
+    # empty the content of .gitignore
+    > "$1/.gitignore"
+
+    # fill .gitignore with files
+    cat "$1/$dir_content" | while read file
+    do
+        if grep -q "^$file$" "$1/$commented_lines";
+        then
+            if [ -d "$1/$file" ];
+            then
+                echo "#/$file/" >> "$1/.gitignore"
+                # recurse into directory
+                track_dir "$1/$file"
+            else
+                echo "#/$file" >> "$1/.gitignore"
+            fi
+        else
+            if [ -d "$1/$file" ];
+            then
+                echo "/$file/" >> "$1/.gitignore"
+            else
+                echo "/$file" >> "$1/.gitignore"
+            fi
+        fi
+    done
+
+    # delete temp files
+    rm "$1/$dir_content" "$1/$commented_lines"
+}
+
+track_dir $HOME
+
+# remove reference to .git folder
+sed -i '/^\/.git\/$/d' $HOME/.gitignore

@@ -1,0 +1,256 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+#font pango:monospace 12
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:DejaVu Sans Mono 12
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Disable window titlebars to enable gaps
+for_window [class=".*"] border pixel 3
+
+# GAPS
+gaps inner 8
+
+# colors
+
+set_from_resource       $BLACK          i3wm.color0     #222222
+set_from_resource       $BLACK_B        i3wm.color8     #666666
+set_from_resource       $RED            i3wm.color1     #a62121
+set_from_resource       $RED_B          i3wm.color9     #e63232
+set_from_resource       $GREEN          i3wm.color2     #208c39
+set_from_resource       $GREEN_B        i3wm.color10    #27b348
+set_from_resource       $YELLOW         i3wm.color3     #a68521
+set_from_resource       $YELLOW_B       i3wm.color11    #cca329
+set_from_resource       $BLUE           i3wm.color4     #20568c
+set_from_resource       $BLUE_B         i3wm.color12    #2879c9
+set_from_resource       $MAGENTA        i3wm.color5     #9e3f9e
+set_from_resource       $MAGENTA_B      i3wm.color13    #d04ec5
+set_from_resource       $CYAN           i3wm.color6     #3a9e9e
+set_from_resource       $CYAN_B         i3wm.color14    #68cbce
+set_from_resource       $WHITE          i3wm.color7     #aaaaaa
+set_from_resource       $WHITE_B        i3wm.color15    #ffffff
+
+set $white0 #ffffff
+set $white1 #f6f6f6
+set $white2 #dddddd
+set $white3 #999999
+
+set $focus0 #27b348
+set $focus1 #177030
+
+set $urgent0 #e63232
+
+set $red0 #ff0000
+
+# class                 border    bg        text    indicator  child_border
+client.focused          $white0   $white0   $focus0  $focus1    $focus0
+client.focused_inactive $white1   $white1   $white3  $white3    $white2
+client.unfocused        $white2   $white2   $white3  $white3    $white2
+client.urgent           $urgent0  $urgent0  $white1  $urgent0   $urgent0
+client.placeholder      $white2   $white2   $white3  $white3    $white2
+
+client.background       $WHITE_B
+
+# use super as main modifier
+set $mod Mod4
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu (through i3-dmenu-desktop)
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+z focus child
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# reload the configuration file (including compton and .Xresources)
+bindsym $mod+Shift+c exec "i3-msg reload && pkill -SIGUSR1 compton && xrdb ~/.Xresources"
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        # set the amount of pixels to shrink/grow the window
+        set $small 1
+	set $large 8
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width $small px or $small ppt
+        bindsym $down       resize grow height $small px or $small ppt
+        bindsym $up         resize shrink height $small px or $small ppt
+        bindsym $right      resize grow width $small px or $small ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width $small px or $small ppt
+        bindsym Down        resize grow height $small px or $small ppt
+        bindsym Up          resize shrink height $small px or $small ppt
+        bindsym Right       resize grow width $small px or $small ppt
+
+        # shift will resize faster
+        bindsym Shift+$left       resize shrink width $large px or $large ppt
+        bindsym Shift+$down       resize grow height $large px or $large ppt
+        bindsym Shift+$up         resize shrink height $large px or $large ppt
+        bindsym Shift+$right      resize grow width $large px or $large ppt
+
+	# same bindings, for arrow keys
+        bindsym Shift+Left       resize shrink width $large px or $large ppt
+        bindsym Shift+Down       resize grow height $large px or $large ppt
+        bindsym Shift+Up         resize shrink height $large px or $large ppt
+        bindsym Shift+Right      resize grow width $large px or $large ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# take a screenshot
+bindsym $mod+Shift+s exec "maim -s | xclip -selection clipboard -t image/png"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+}
