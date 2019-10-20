@@ -6,6 +6,8 @@
 /.local/
 /.npm/
 /.nv/
+/.nvm/
+/.pkg-cache/
 /.pki/
 #/.qt/
 #/.rustup/
@@ -31,6 +33,7 @@
 #/.gitignore
 /.gitignore.old
 /.lesshst
+/.npmrc
 /.nvidia-settings-rc
 /.pulse-cookie
 /.steampath
