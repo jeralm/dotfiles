@@ -11,6 +11,7 @@
 /.pki/
 #/.qt/
 #/.rustup/
+/.ssh/
 /.steam/
 /.vscode-oss/
 /.wallpaper/
