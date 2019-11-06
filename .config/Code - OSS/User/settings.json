@@ -7,5 +7,6 @@
     "git.enableSmartCommit": true,
     "explorer.confirmDelete": false,
     "editor.acceptSuggestionOnEnter": "off",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "git.confirmSync": false
 }
