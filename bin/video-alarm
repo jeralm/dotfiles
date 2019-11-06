@@ -1,0 +1,11 @@
+#!/bin/sh
+
+title_id="80179831"
+
+if [[ -z "${I3SOCK}" ]]; then
+    export I3SOCK=$(DISPLAY=:0 i3 --get-socketpath)
+fi
+
+i3-msg "focus output primary, exec chromium --app=https://www.netflix.com/watch/$title_id"
+sleep 0.5
+i3-msg "fullscreen enable"
