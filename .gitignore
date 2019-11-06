@@ -13,6 +13,7 @@
 #/.rustup/
 /.ssh/
 /.steam/
+#/.vscode/
 /.vscode-oss/
 /.wallpaper/
 #/bin/
@@ -45,3 +46,4 @@
 /.xscreensaver
 /.xsession-errors
 /.xsession-errors.old
+#/TODO
