@@ -1,0 +1,12 @@
+{
+    "files.exclude": {
+        ".cache/{asp,babl,chromium,electron,fontconfig,g-ir-scanner,gegl-0.4,gimp,go-build,gstreamer-1.0,qtshadercache,spotify}": true,
+        ".cargo/registry/{cache,index}": true,
+        ".ccache/": true,
+        ".config/{chromium,discord,Electron,spotify}": true,
+        ".local/share/{Steam}": true,
+        ".npm/{_cacache,}": true,
+        ".nv": true,
+        ".steam": true
+    }
+}
