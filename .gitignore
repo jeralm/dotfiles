@@ -3,6 +3,8 @@
 /.ccache/
 #/.config/
 /.gnupg/
+/.java/
+/.jd/
 /.local/
 /.npm/
 /.nv/
