@@ -8,5 +8,7 @@
     "explorer.confirmDelete": false,
     "editor.acceptSuggestionOnEnter": "off",
     "workbench.startupEditor": "newUntitledFile",
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "git.autoRepositoryDetection": false,
+    "extensions.ignoreRecommendations": true
 }
