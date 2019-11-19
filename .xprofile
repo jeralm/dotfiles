@@ -10,5 +10,5 @@ feh --recursive --randomize --bg-fill ~/.wallpaper/*
 # start the screensaver
 xscreensaver -no-splash &
 
-# start compton
-compton -b &
+# start picom
+picom -b &
