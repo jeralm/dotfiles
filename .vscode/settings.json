@@ -4,9 +4,10 @@
         ".cargo/registry/{cache,index}": true,
         ".ccache/": true,
         ".config/{chromium,discord,Electron,spotify}": true,
+        ".jd": true,
         ".local/share/{Steam}": true,
         ".npm/{_cacache,}": true,
         ".nv": true,
-        ".steam": true
+        ".steam": true,
     }
 }
