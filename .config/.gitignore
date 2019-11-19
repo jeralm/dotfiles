@@ -26,5 +26,5 @@
 #/.gitignore
 /QtProject.conf
 /baloofilerc
-#/compton.conf
+#/picom.conf
 #/mimeapps.list

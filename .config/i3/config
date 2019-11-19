@@ -197,8 +197,8 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# reload the configuration file (including compton and .Xresources)
-bindsym $mod+Shift+c exec "i3-msg reload && pkill -SIGUSR1 compton && xrdb ~/.Xresources"
+# reload the configuration file (including picom and .Xresources)
+bindsym $mod+Shift+c exec "i3-msg reload && pkill -SIGUSR1 picom && xrdb ~/.Xresources"
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
