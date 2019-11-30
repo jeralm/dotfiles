@@ -8,7 +8,7 @@ setxkbmap usfr
 feh --recursive --randomize --bg-fill ~/.wallpaper/*
 
 # start the screensaver
-xscreensaver -no-splash &
+# xscreensaver -no-splash &
 
 # start picom
 picom -b &
