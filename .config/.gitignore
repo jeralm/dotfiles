@@ -14,6 +14,7 @@
 /gtk-3.0/
 /htop/
 #/i3/
+/libreoffice/
 /mono.addins/
 /mpv/
 /pulse/
@@ -26,5 +27,5 @@
 #/.gitignore
 /QtProject.conf
 /baloofilerc
-#/picom.conf
 #/mimeapps.list
+#/picom.conf
