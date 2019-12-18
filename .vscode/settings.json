@@ -1,14 +1,19 @@
 {
     "files.exclude": {
         ".cache/{asp,babl,chromium,electron,fontconfig,g-ir-scanner,gegl-0.4,gimp,go-build,gstreamer-1.0,qtshadercache,spotify}": true,
-        ".cargo/registry/{cache,index}": true,
+        ".cargo/registry": true,
         ".ccache/": true,
-        ".config/{chromium,discord,Electron,spotify}": true,
+        ".vscode-oss/extensions/*/*": true,
+        ".config/{chromium,Code - OSS/{Cache,CachedData},discord,Electron,spotify}": true,
         ".jd": true,
         ".local/share/{Steam}": true,
         ".npm/{_cacache,}": true,
         ".nv": true,
+        ".nvm/versions/node/v10.16.0/*": true,
+        ".rustup/toolchains/*/{lib,share}/*": true,
         ".steam": true,
+        ".cache/**/{node_modules,npm_cache}": true,
+        "code/*": true,
     },
     "files.associations": {
         "**/.config/i3/config": "i3"
